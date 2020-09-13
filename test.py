@@ -68,9 +68,9 @@ def loop(localhostIP, psword, name, pid, email):
     except:
         messagebox.showinfo("Error", "Check Password or Hostname")
     else:
-        for i in range(len(pid_list)): #이게 무슨의미지? 저 코드 -> pid_list길이 만큼 for문을 반복하는거얌!!
+        for i in range(len(pid_list)): #
             out, err, returncode = run_cmd(client, "echo %s >> PID.txt"%pid_list[i])   
-        #out, err, returncode = run_cmd(client, "echo %s >> PID.txt"%pid_list[i]) #이 코드까지만 포문 돌면댕 쨔 오호 하나더있어
+        #out, err, returncode = run_cmd(client, "echo %s >> PID.txt"%pid_list[i]) #
         
         #make null file past_finished_PID.txt
         out, err, returncode = run_cmd(client, "if [ -f past_finished_PID.txt ]; then echo 'yes' ; else touch past_finished_PID.txt ; fi ")
@@ -90,7 +90,7 @@ def loop(localhostIP, psword, name, pid, email):
         X2 = int(out.decode("utf-8").strip())
         print(X2)
         print("step 4 =========================================================")
-        #here finish 근데 for문 실행이 어디까지 되어야하는거얌?? 왜냐면 파이썬 에서는 이렇게 들여쓰기를 잘 해줘야돼가지구!!
+        #
         #All job is finished = 1
         #running = 2
         #Some job is finished
@@ -110,7 +110,7 @@ def loop(localhostIP, psword, name, pid, email):
             email_function(send, email, fini)
             print("Y222")
             out, err, returncode = run_cmd(client, "rm past_finished_PID.txt running_PID.txt PID.txt finished_PID.txt top.txt")
-            #여기에  함수 종료시켜야댕 근데 뭘해도안되는거같오 잠만!!! 내가 함 해볼겡!!
+            
             return 0
 
         elif result == "Some_job_is_finished":
@@ -196,8 +196,8 @@ top.mainloop()
 
 
 '''
-host : ubuntu
-pass : 1234
-ip : 13.125.169.154
+host : 
+pass : 
+ip : 
 
 '''
